@@ -1,5 +1,5 @@
 group 'jp.co.tagbangers'
-version '1.0.0.BUILD-SNAPSHOT-201610221550'
+version '1.0.0.M1'
 description = 'JIRA API'
 
 apply plugin: 'java'
