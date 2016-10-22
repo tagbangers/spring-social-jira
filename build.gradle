@@ -1,0 +1,37 @@
+group 'jp.co.tagbangers'
+version '1.0.0.BUILD-SNAPSHOT-201610221550'
+description = 'JIRA API'
+
+apply plugin: 'java'
+apply plugin: 'maven'
+
+apply from: 'publish-maven.gradle'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.social:spring-social-core:$springSocialVersion")
+
+    compile("net.oauth.core:oauth:${oauthVersion}")
+    compile("net.oauth.core:oauth-httpclient4:${oauthHttpclientVersion}")
+
+    testCompile("org.springframework:spring-test:$springVersion")
+}
+
+task javadocJar(type: Jar) {
+    classifier = 'javadoc'
+    from javadoc
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives javadocJar, sourcesJar
+}
