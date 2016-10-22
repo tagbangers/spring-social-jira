@@ -33,7 +33,6 @@ public class JiraTemplate extends AbstractOAuth1ApiBinding implements Jira {
 		initSubApis();
 	}
 
-	@Override
 	public String getBaseUrl() {
 		return baseUrl;
 	}
